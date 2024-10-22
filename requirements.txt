@@ -2,3 +2,4 @@ transformers
 torch
 tokenizers
 streamlit
+protobuf<4.0
