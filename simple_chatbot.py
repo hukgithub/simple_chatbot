@@ -1,13 +1,13 @@
 # Step 1: Install necessary libraries
-# You don't need to include this in the app; it's just for Google Colab or local testing.
-# !pip install transformers streamlit
+# You don't need to include this in the app; it's just for local testing.
+# !pip install transformers torch streamlit
 
 # Step 2: Import necessary libraries
 import streamlit as st
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
 # Step 3: Load the Flan-T5 model and tokenizer
-@st.cache_resource
+@st.cache_data  # Use cache_data instead of cache_resource to avoid issues
 def load_model():
     model_name = "google/flan-t5-small"  # You can use a larger version if needed
     tokenizer = T5Tokenizer.from_pretrained(model_name)
